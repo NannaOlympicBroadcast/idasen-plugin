@@ -1,0 +1,18 @@
+{
+  "name": "idasen-tray",
+  "version": "1.0.0",
+  "private": true,
+  "description": "System-tray desk height controller for the IKEA Idasen desk, built on the idasen-controller SDK.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-rebuild -f -w @abandonware/noble,@abandonware/bluetooth-hci-socket -m ../.."
+  },
+  "dependencies": {
+    "idasen-controller": "*"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.2.0",
+    "electron": "^33.0.0"
+  }
+}

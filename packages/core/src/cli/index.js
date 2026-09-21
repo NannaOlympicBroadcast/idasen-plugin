@@ -2,13 +2,11 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
 import { BluetoothAdapter } from '../bt-adapter/bluetooth-adapter.js';
 import { DeskManager } from '../desk/desk-manager.js';
 import { store } from '../store.js';
 import { storeKeys } from '../store-keys.js';
+import { CONFIG_FILE, loadConfig, saveConfig } from '../config.js';
 
 // Initialize store with default values
 const setDefaultValues = () => {
@@ -21,38 +19,6 @@ const setDefaultValues = () => {
 };
 
 setDefaultValues();
-
-const CONFIG_DIR = path.join(os.homedir(), '.idasen');
-const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
-
-// Configuration management
-function ensureConfigDir() {
-  if (!fs.existsSync(CONFIG_DIR)) {
-    fs.mkdirSync(CONFIG_DIR, { recursive: true });
-  }
-}
-
-function loadConfig() {
-  ensureConfigDir();
-  if (fs.existsSync(CONFIG_FILE)) {
-    try {
-      return JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
-    } catch (error) {
-      console.error(chalk.red('Error reading config file:'), error.message);
-      return {};
-    }
-  }
-  return {};
-}
-
-function saveConfig(config) {
-  ensureConfigDir();
-  try {
-    fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
-  } catch (error) {
-    console.error(chalk.red('Error saving config:'), error.message);
-  }
-}
 
 // Initialize Bluetooth and Desk Manager
 let bluetoothAdapter;
