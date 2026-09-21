@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "idasen-plugin-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "."
+      }
+    }
+  },
+  "enabledPlugins": {
+    "idasen-desk-control@idasen-plugin-marketplace": true
+  }
+}

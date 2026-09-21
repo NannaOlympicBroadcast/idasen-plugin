@@ -2,6 +2,7 @@ import { store } from './store.js';
 import { bluetoothAdapter } from './bt-adapter/bluetooth-adapter.js';
 import { DeskManager } from './desk/desk-manager.js';
 import { storeKeys } from './store-keys.js';
+import { CONFIG_FILE, CONFIG_DIR, loadConfig, saveConfig } from './config.js';
 
 const setDefaultValues = () => {
   store.add(storeKeys.DEFAULT_HEIGHT_TOLERANCE_THRESHOLD, 0.005);
@@ -17,4 +18,7 @@ setDefaultValues();
 export const deskManager = new DeskManager(bluetoothAdapter);
 export const deskSettings = {
   store, storeKeys
+};
+export const deskConfig = {
+  CONFIG_FILE, CONFIG_DIR, loadConfig, saveConfig
 };

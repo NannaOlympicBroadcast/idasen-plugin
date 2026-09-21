@@ -1,0 +1,13 @@
+{
+  "name": "idasen-plugin-marketplace",
+  "owner": {
+    "name": "idasen-plugin contributors"
+  },
+  "plugins": [
+    {
+      "name": "idasen-desk-control",
+      "source": "./packages/cowork-plugin",
+      "description": "Control an IKEA Idasen standing desk from Claude via a local MCP server, sharing config with the idasen-tray app."
+    }
+  ]
+}

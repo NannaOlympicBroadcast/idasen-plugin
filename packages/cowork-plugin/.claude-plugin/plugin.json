@@ -1,0 +1,17 @@
+{
+  "name": "idasen-desk-control",
+  "displayName": "Idasen Desk Control",
+  "version": "1.0.0",
+  "description": "Control an IKEA Idasen standing desk from Claude: scan, connect, move, and manage height presets. Shares its SDK and ~/.idasen/config.json with the idasen-tray app and the idasen CLI.",
+  "author": {
+    "name": "idasen-plugin contributors"
+  },
+  "license": "MIT",
+  "keywords": ["idasen", "ikea", "desk", "standing desk", "bluetooth"],
+  "mcpServers": {
+    "idasen-desk": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server.js"]
+    }
+  }
+}

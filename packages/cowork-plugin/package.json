@@ -1,0 +1,13 @@
+{
+  "name": "idasen-cowork-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Claude Cowork plugin exposing MCP tools to control an IKEA Idasen desk, built on the idasen-controller SDK and running as a local stdio MCP server.",
+  "type": "module",
+  "main": "mcp-server.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "idasen-controller": "*",
+    "zod": "^3.23.8"
+  }
+}

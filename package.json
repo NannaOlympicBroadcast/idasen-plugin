@@ -1,55 +1,14 @@
 {
-  "name": "idasen-controller",
-  "version": "1.4.0",
-  "description": "Package wrapping simple controls of Idasen IKEA desk with CLI tool.",
-  "author": "Piotr Filipp",
-  "license": "MIT",
-  "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "bin": {
-    "idasen": "./bin/idasen"
-  },
+  "name": "idasen-plugin-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Idasen desk control: core library/CLI, system-tray desktop app, and Claude Cowork MCP plugin, sharing one SDK and config.",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "rollup -c ./rollup.config.js",
-    "dev": "rollup -w -c ./rollup.config.js",
-    "test": "jest"
+    "build": "npm run build -w idasen-controller",
+    "test": "npm run test -w idasen-controller"
   },
-  "dependencies": {
-    "@abandonware/noble": "abandonware/noble",
-    "commander": "^12.0.0",
-    "chalk": "^5.3.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^15.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/jest": "^26.0.14",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "jest": "^26.4.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.9.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "rollup-plugin-peer-deps-external": "^2.2.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pfilipp/idasen-controller.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pfilipp/idasen-controller/issues"
-  },
-  "homepage": "https://github.com/pfilipp/idasen-controller#readme",
-  "keywords": [
-    "idasen",
-    "ikea",
-    "desk",
-    "standing desk",
-    "bluetooth",
-    "noble"
-  ]
+  "license": "MIT"
 }
